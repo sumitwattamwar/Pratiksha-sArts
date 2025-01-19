@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Courses - Ready Rangoli, Aari Work, Portrait Rangoli</title>
+	<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .course {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .course h3 {
+            margin: 0;
+            color: #4CAF50;
+        }
+        .course p {
+            margin: 5px 0 10px;
+        }
+        .course img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .form-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-container input, .form-container textarea, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Pratiksha's Arts</h1>
+        <p>Learn Ready Rangoli, Aari Work, and Portrait Rangoli</p>
+    </header>
+
+    <nav>
+        <a href="#courses">Courses</a>
+        <a href="#enroll">Enroll</a>
+    </nav>
+
+    <div class="container" id="courses">
+        <h2>Our Courses</h2>
+
+        <div class="course">
+            <h3>Ready Rangoli</h3>
+            <img src="C:\Users\Hp\MyArtClasses\Images\VitthalRukmaiReadyRangoli.jpg" alt="Ready Rangoli">
+            <p>Discover the art of creating intricate rangoli designs with ease using our ready templates and techniques.</p>
+        </div>
+
+        <div class="course">
+            <h3>Aari Work</h3>
+            <img src="C:\Users\Hp\MyArtClasses\Images\AariWork.jpg" alt="Aari Work">
+            <p>Learn the traditional embroidery technique of Aari Work, perfect for enhancing fabrics with elegance.</p>
+        </div>
+
+        <div class="course">
+            <h3>Portrait Rangoli</h3>
+            <img src="images/portrait-rangoli.jpg" alt="Portrait Rangoli">
+            <p>Create stunning rangoli portraits with vibrant colors and precision techniques.</p>
+        </div>
+    </div>
+
+    <div class="container" id="enroll">
+        <h2>Enroll in a Course</h2>
+        <div class="form-container">
+           <form id="enrollForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+                <label for="course">Select Course</label>
+                <select id="course" name="course" required>
+                    <option value="ready-rangoli">Ready Rangoli</option>
+                    <option value="aari-work">Aari Work</option>
+                    <option value="portrait-rangoli">Portrait Rangoli</option>
+                </select>
+
+                <label for="message">Additional Message (Optional)</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your message..."></textarea>
+
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+        </div>
+    </div>
+ <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAXxeO6WUlXOuzW0Hio66Ra0d_v4yKKdjc",
+            authDomain: "myartclasses-77403.firebaseapp.com",
+            projectId: "myartclasses-77403",
+            storageBucket: "myartclasses-77403.firebasestorage.app",
+            messagingSenderId: "703136984561",
+            appId: "1:703136984561:web:ef370f1a6a60ba8daea850"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Submit form data to Firestore
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const course = document.getElementById('course').value;
+            const message = document.getElementById('message').value;
+
+            db.collection('enrollments').add({
+                name: name,
+                email: email,
+                course: course,
+                message: message
+            }).then(() => {
+                alert('Enrollment Successful!');
+                document.getElementById('enrollForm').reset();
+            }).catch((error) => {
+                console.error('Error writing document: ', error);
+            });
+        }
+    </script>
+    <footer>
+        <p style="text-align:center; margin:20px 0;">&copy; 2025 My Art Courses</p>
+    </footer>
+</body>
+</html>
