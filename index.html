@@ -6,6 +6,8 @@
     <title>Art Courses - Ready Rangoli, Aari Work, Portrait Rangoli</title>
 	<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,11 +53,16 @@
         .course p {
             margin: 5px 0 10px;
         }
-        .course img {
-            max-width: 100%;
+        .carousel {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .carousel img {
+            width: 100%;
             height: auto;
             border-radius: 5px;
-            margin-top: 10px;
+            object-fit: contain;
+            max-height: 300px;
         }
         .form-container {
             margin-top: 20px;
@@ -98,19 +105,32 @@
 
         <div class="course">
             <h3>Ready Rangoli</h3>
-            <img src="C:\Users\Hp\MyArtClasses\Images\VitthalRukmaiReadyRangoli.jpg" alt="Ready Rangoli">
+            <div class="carousel">
+                <img src="Images\ReadyRangoli\VitthalaReadyRangoli.jpg" alt="Ready Rangoli 1">
+                <img src="Images\ReadyRangoli\VitthalRukmaiReadyRangoli.jpg" alt="Ready Rangoli 2">
+                <img src="Images\ReadyRangoli\ReadyRangoli.jpg" alt="Ready Rangoli 3">
+            </div>
             <p>Discover the art of creating intricate rangoli designs with ease using our ready templates and techniques.</p>
         </div>
 
         <div class="course">
             <h3>Aari Work</h3>
-            <img src="C:\Users\Hp\MyArtClasses\Images\AariWork.jpg" alt="Aari Work">
+            <div class="carousel">
+                <img src="Images\AariWork\AariWork-Jagadamba.jpg" alt="Aari Work 1">
+                <img src="Images\AariWork\AariWork-Jagadamba2.jpg" alt="Aari Work 2">
+                <img src="Images\AariWork\AariWork2.jpg" alt="Aari Work 3">
+				 <img src="Images\AariWork\AariWork.jpg" alt="Aari Work 4">
+            </div>
             <p>Learn the traditional embroidery technique of Aari Work, perfect for enhancing fabrics with elegance.</p>
         </div>
 
         <div class="course">
             <h3>Portrait Rangoli</h3>
-            <img src="images/portrait-rangoli.jpg" alt="Portrait Rangoli">
+            <div class="carousel">
+                <img src="Images\PortraitRangoli\Swami.jpg" alt="Portrait Rangoli 1">
+                <img src="Images\PortraitRangoli\Vivah.jpg" alt="Portrait Rangoli 2">
+                <img src="Images\PortraitRangoli\Vivah1.jpg" alt="Portrait Rangoli 3">
+            </div>
             <p>Create stunning rangoli portraits with vibrant colors and precision techniques.</p>
         </div>
     </div>
@@ -139,7 +159,22 @@
             </form>
         </div>
     </div>
- <script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        // Initialize Slick Carousel
+        $(document).ready(function(){
+            $('.carousel').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 2000
+            });
+        });
+
         // Your Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyAXxeO6WUlXOuzW0Hio66Ra0d_v4yKKdjc",
