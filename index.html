@@ -8,6 +8,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+	 <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,7 +17,7 @@
             background-color: #f9f9f9;
         }
         header {
-            background-color: #4CAF50;
+             background-color: #4CAF50;
             color: white;
             padding: 1rem;
             text-align: center;
@@ -64,6 +65,14 @@
             object-fit: contain;
             max-height: 300px;
         }
+
+    .carousel-video {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: contain;
+            max-height: 300px;
+    }
         .form-container {
             margin-top: 20px;
             padding: 20px;
@@ -87,12 +96,62 @@
         .form-container button:hover {
             background-color: #45a049;
         }
+		.multicolor-background {
+            height: 40vh;
+            background: linear-gradient(45deg, red, yellow, green, orange, purple);
+			color: white; /* Text color */
+        }
+		 .carousel-container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-item.active {
+            display: block; /* Show only the active item */
+        }
+
+        .video-item {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: contain;
+            max-height: 300px;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Pratiksha's Arts</h1>
-        <p>Learn Ready Rangoli, Aari Work, and Portrait Rangoli</p>
+ <header class="multicolor-background">
+        <div style="display: flex; align-items: center; padding: 0 1rem;">
+            <img src="Images\Logos\logo6.png" alt="Logo" style="width: 300px; margin-right: 300px;">
+            <div>
+                <h1><span class="flash-number">Welcome to Pratiksha's Arts</span></h1>
+                <p style="font-size: 1.5em; font-weight: bold;">Learn Ready Rangoli, Aari Work, and Portrait Rangoli</p>
+				<p style="font-size: 1.0em; color: black; font-weight: bold;">For Inquiries, Please Contact Us At: 8482878662</p>
+            </div>
+        </div>
     </header>
 
     <nav>
@@ -120,6 +179,7 @@
                 <img src="Images\AariWork\AariWork-Jagadamba2.jpg" alt="Aari Work 2">
                 <img src="Images\AariWork\AariWork2.jpg" alt="Aari Work 3">
 				 <img src="Images\AariWork\AariWork.jpg" alt="Aari Work 4">
+				  <video class="video-item" controls><source src="Videos\AariWork\AariWorkVid.mp4" type="video/mp4">Your browser does not support the video tag.</video>
             </div>
             <p>Learn the traditional embroidery technique of Aari Work, perfect for enhancing fabrics with elegance.</p>
         </div>
@@ -209,6 +269,44 @@
             });
         }
     </script>
+	<script>
+    let currentIndex = 0;
+    const items = document.querySelectorAll('carousel');
+    const video = document.getElementById('video');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    // Function to show the next item in the carousel
+    function showNextItem() {
+        items[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % items.length; // Loop back to the first item
+        items[currentIndex].classList.add('active');
+    }
+
+    // Function to show the previous item in the carousel
+    function showPrevItem() {
+        items[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        items[currentIndex].classList.add('active');
+    }
+
+    // Disable carousel while video is playing
+    video.addEventListener('play', () => {
+        clearInterval(autoSlide); // Stop automatic slide while video is playing
+    });
+
+    // Enable carousel after video ends
+    video.addEventListener('ended', () => {
+        autoSlide = setInterval(showNextItem, 3000); // Restart the automatic slide
+    });
+
+    // Set the carousel to auto-slide every 3 seconds
+    let autoSlide = setInterval(showNextItem, 3000);
+
+    // Add event listeners for Prev and Next buttons
+    prevButton.addEventListener('click', showPrevItem);
+    nextButton.addEventListener('click', showNextItem);
+</script>
     <footer>
         <p style="text-align:center; margin:20px 0;">&copy; 2025 My Art Courses</p>
     </footer>
