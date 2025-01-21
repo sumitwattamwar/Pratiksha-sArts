@@ -131,8 +131,9 @@ nav a:hover {
     }
 }
 .highlight {
-    background: linear-gradient(50deg, red, yellow, green, orange, purple);
+    background: #6CA6CD;
     padding: 2px 5px;
+	color: white;
 }
 @keyframes flash {
     0%, 100% {
