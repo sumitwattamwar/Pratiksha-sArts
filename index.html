@@ -4,153 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Courses - Ready Rangoli, Aari Work, Portrait Rangoli</title>
-	<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-	 <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        header {
-             background-color: #4CAF50;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .container {
-            padding: 20px;
-        }
-        .course {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            background-color: white;
-        }
-        .course h3 {
-            margin: 0;
-            color: #4CAF50;
-        }
-        .course p {
-            margin: 5px 0 10px;
-        }
-        .carousel {
-            width: 100%;
-            margin: 10px 0;
-        }
-        .carousel img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            object-fit: contain;
-            max-height: 300px;
-        }
-
-    .carousel-video {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            object-fit: contain;
-            max-height: 300px;
-    }
-        .form-container {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .form-container input, .form-container textarea, .form-container button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .form-container button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #45a049;
-        }
-		.multicolor-background {
-            height: 40vh;
-            background: linear-gradient(45deg, red, yellow, green, orange, purple);
-			color: white; /* Text color */
-        }
-		 .carousel-container {
-            position: relative;
-            width: 600px;
-            height: 400px;
-            overflow: hidden;
-        }
-
-        .carousel-item {
-            display: none;
-            width: 100%;
-            height: 100%;
-        }
-
-        .carousel-item.active {
-            display: block; /* Show only the active item */
-        }
-
-        .video-item {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            object-fit: contain;
-            max-height: 300px;
-        }
-
-        .controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .prev, .next {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- <header class="multicolor-background">
-        <div style="display: flex; align-items: center; padding: 0 1rem;">
-            <img src="Images\Logos\logo6.png" alt="Logo" style="width: 300px; margin-right: 300px;">
-            <div>
-                <h1><span class="flash-number">Welcome to Pratiksha's Arts</span></h1>
+    <header class="multicolor-background">
+        <div style="display: flex; align-items: center; flex-wrap: wrap; padding: 0 1rem;">
+            <img src="Images/Logos/logo6.png" alt="Logo" style="width: 100%; max-width: 150px; margin-right: auto; margin-bottom: 1rem;">
+            <div style="flex: 1; text-align: center;">
+                <h1><span class="flash-content">Welcome to Pratiksha's Arts</span></h1>
                 <p style="font-size: 1.5em; font-weight: bold;">Learn Ready Rangoli, Aari Work, and Portrait Rangoli</p>
-				<p style="font-size: 1.0em; color: black; font-weight: bold;">For Inquiries, Please Contact Us At: 8482878662</p>
+                <p style="font-size: 1em; color: black; font-weight: bold; margin-top: -25px" >For Inquiries, Please Contact Us At:  <span style="display: inline-block; vertical-align: middle; margin-right: 5px;"><img src="Images\Icons\icons8-mobile-phone-48.png" alt="mobile" style="width: 40px; height: 40px; margin-top: 5px; vertical-align: middle;"></span>8482878662</p>
+                <div style="margin-top: 10px; display: flex; justify-content: center; gap: 20px;">
+                    <a href="https://www.youtube.com/channel/YourChannel" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <span style="color: black; font-size: 0.9em;">Please Subscribe us on</span>
+                        <img src="Images\Icons\vecteezy_youtube-popular-social-media-logo_47580478.png" alt="YouTube" style="width: 40px; height: 40px; margin-top: 15px;">
+                    </a>
+                    <a href="https://www.instagram.com/YourProfile" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <span style="color: black; font-size: 0.9em;">Follow us on </span>
+                        <img src="Images\Icons\vecteezy_instagram-logo-png-instagram-icon-transparent_18930413.png" alt="Instagram" style="width: 40px; height: 40px; margin-top: 15px;">
+                    </a>
+                    <a href="https://www.facebook.com/YourProfile" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <span style="color: black; font-size: 0.9em;">Connect us on</span>
+                        <img src="Images\Icons\icons8-facebook-48.png" alt="Facebook" style="width: 40px; height: 40px; margin-top: 15px;">
+                    </a>
+                </div>
             </div>
+            
+        </div>
         </div>
     </header>
 
@@ -163,29 +47,32 @@
         <h2>Our Courses</h2>
 
         <div class="course">
-            <h3>Ready Rangoli</h3>
+            <h3><span class="highlight">Ready Rangoli</span></h3>
             <div class="carousel">
+                <img src="Images\ReadyRangoli\Jagdamb.jpg" alt="Ready Rangoli 1">
                 <img src="Images\ReadyRangoli\VitthalaReadyRangoli.jpg" alt="Ready Rangoli 1">
-                <img src="Images\ReadyRangoli\VitthalRukmaiReadyRangoli.jpg" alt="Ready Rangoli 2">
+                <img src="Images\ReadyRangoli\Rukhmai.jpg" alt="Ready Rangoli 1">
+                <img src="Images\ReadyRangoli\VithhhalRukhmai.jpg" alt="Ready Rangoli 2">
                 <img src="Images\ReadyRangoli\ReadyRangoli.jpg" alt="Ready Rangoli 3">
+                <img src="Images\ReadyRangoli\Peacock.jpg" alt="Ready Rangoli 3">
             </div>
             <p>Discover the art of creating intricate rangoli designs with ease using our ready templates and techniques.</p>
         </div>
 
-        <div class="course">
-            <h3>Aari Work</h3>
+        <div class="course">      
+        </div>
+            <h3><span class="highlight">Aari Work</span></h3>
             <div class="carousel">
                 <img src="Images\AariWork\AariWork-Jagadamba.jpg" alt="Aari Work 1">
                 <img src="Images\AariWork\AariWork-Jagadamba2.jpg" alt="Aari Work 2">
                 <img src="Images\AariWork\AariWork2.jpg" alt="Aari Work 3">
 				 <img src="Images\AariWork\AariWork.jpg" alt="Aari Work 4">
-				  <video class="video-item" controls><source src="Videos\AariWork\AariWorkVid.mp4" type="video/mp4">Your browser does not support the video tag.</video>
             </div>
             <p>Learn the traditional embroidery technique of Aari Work, perfect for enhancing fabrics with elegance.</p>
         </div>
 
         <div class="course">
-            <h3>Portrait Rangoli</h3>
+            <h3><span class="highlight">Portrait Rangoli</span></h3>
             <div class="carousel">
                 <img src="Images\PortraitRangoli\Swami.jpg" alt="Portrait Rangoli 1">
                 <img src="Images\PortraitRangoli\Vivah.jpg" alt="Portrait Rangoli 2">
@@ -193,12 +80,28 @@
             </div>
             <p>Create stunning rangoli portraits with vibrant colors and precision techniques.</p>
         </div>
+        <div class="course">
+            <h3><span class="highlight">Arts Video Gallery</span></h3>
+            <p>Create stunning Aari work, Ready and Portrait Rangoli with precision techniques.</p>
+            <div class="carousel">
+                <video class="video-item" controls><source src="Videos\AariWork\AariWorkVid6.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <video class="video-item" controls><source src="Videos\Rangoli\Potrait Rangoli.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <video class="video-item" controls><source src="Videos\Painting\Portrait Painting1.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <video class="video-item" controls><source src="Videos\AariWork\AariWorkVid2.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <video class="video-item" controls><source src="Videos\Rangoli\Rangoli1.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <video class="video-item" controls><source src="Videos\AariWork\AariWorkVid4.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <video class="video-item" controls><source src="Videos\Painting\Portrait Painting.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <video class="video-item" controls><source src="Videos\AariWork\AariWorkVid.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <video class="video-item" controls><source src="Videos\Painting\Portrait Painting2.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <video class="video-item" controls><source src="Videos\AariWork\AariWorkVid.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+            </div>
+        </div>
     </div>
 
     <div class="container" id="enroll">
         <h2>Enroll in a Course</h2>
         <div class="form-container">
-           <form id="enrollForm">
+            <form id="enrollForm">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="Your full name" required>
 
@@ -223,90 +126,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        // Initialize Slick Carousel
-        $(document).ready(function(){
+          $(document).ready(function () {
+            // Initialize Slick Carousel
             $('.carousel').slick({
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 dots: true,
                 autoplay: true,
-                autoplaySpeed: 2000
+                autoplaySpeed: 2000,
+            });
+
+            // Pause carousel autoplay when a video starts playing
+            $('.video-item').on('play', function () {
+                $('.carousel').slick('slickPause');
+
+                // Stop all other videos
+                $('.video-item').not(this).each(function () {
+                    this.pause();
+                    this.currentTime = 0; // Reset the other videos to the start
+                });
+            });
+
+            // Check video playback state and resume autoplay if no video is playing
+            $('.video-item').on('pause', function () {
+                const anyPlaying = $('.video-item').toArray().some(video => !video.paused);
+                if (!anyPlaying) {
+                    $('.carousel').slick('slickPlay');
+                }
+            });
+
+            // Resume carousel autoplay when the video ends
+            $('.video-item').on('ended', function () {
+                const anyPlaying = $('.video-item').toArray().some(video => !video.paused);
+                if (!anyPlaying) {
+                    $('.carousel').slick('slickPlay');
+                }
             });
         });
 
-        // Your Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAXxeO6WUlXOuzW0Hio66Ra0d_v4yKKdjc",
-            authDomain: "myartclasses-77403.firebaseapp.com",
-            projectId: "myartclasses-77403",
-            storageBucket: "myartclasses-77403.firebasestorage.app",
-            messagingSenderId: "703136984561",
-            appId: "1:703136984561:web:ef370f1a6a60ba8daea850"
-        };
-
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
-        // Submit form data to Firestore
         function submitForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const course = document.getElementById('course').value;
-            const message = document.getElementById('message').value;
-
-            db.collection('enrollments').add({
-                name: name,
-                email: email,
-                course: course,
-                message: message
-            }).then(() => {
-                alert('Enrollment Successful!');
-                document.getElementById('enrollForm').reset();
-            }).catch((error) => {
-                console.error('Error writing document: ', error);
-            });
+            alert('Enrollment submitted successfully!');
         }
     </script>
-	<script>
-    let currentIndex = 0;
-    const items = document.querySelectorAll('carousel');
-    const video = document.getElementById('video');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
 
-    // Function to show the next item in the carousel
-    function showNextItem() {
-        items[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % items.length; // Loop back to the first item
-        items[currentIndex].classList.add('active');
-    }
-
-    // Function to show the previous item in the carousel
-    function showPrevItem() {
-        items[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        items[currentIndex].classList.add('active');
-    }
-
-    // Disable carousel while video is playing
-    video.addEventListener('play', () => {
-        clearInterval(autoSlide); // Stop automatic slide while video is playing
-    });
-
-    // Enable carousel after video ends
-    video.addEventListener('ended', () => {
-        autoSlide = setInterval(showNextItem, 3000); // Restart the automatic slide
-    });
-
-    // Set the carousel to auto-slide every 3 seconds
-    let autoSlide = setInterval(showNextItem, 3000);
-
-    // Add event listeners for Prev and Next buttons
-    prevButton.addEventListener('click', showPrevItem);
-    nextButton.addEventListener('click', showNextItem);
-</script>
     <footer>
         <p style="text-align:center; margin:20px 0;">&copy; 2025 My Art Courses</p>
     </footer>

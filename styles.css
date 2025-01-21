@@ -1,33 +1,43 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    background-color: #f9f9f9;
 }
 
 header {
-    ddisplay: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url('Images\BG\bg1.jpg');
-    background-size: cover;
-    background-position: center;
+    background-color: #4CAF50;
     color: white;
-    padding: 20px;
-    height: 240px; /* Optional: Adjust height as needed */
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
 }
- .title {
-            text-align: center;
-            flex-grow: 1; /* Ensures the title takes up remaining space */
-        }
+
+header img {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+header div {
+    flex: 1;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
 nav a {
     color: white;
     padding: 14px 20px;
     text-decoration: none;
-    display: inline-block;
+    text-align: center;
 }
 
 nav a:hover {
@@ -40,17 +50,89 @@ nav a:hover {
 }
 
 .course {
-    margin: 10px 0;
+    border: 1px solid #ccc;
     padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.course h3 {
+    margin: 0;
+    color: black;
+}
+
+.course p {
+    margin: 5px 0 10px;
+}
+
+.carousel {
+    width: 100%;
+    margin: 10px 0;
+    background: black;
+}
+
+.carousel img, .video-item {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+    max-height: 300px;
+}
+
+.form-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input,
+.form-container textarea,
+.form-container button,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.form-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+.multicolor-background {
+    height: 40vh;
+    background: linear-gradient(45deg, red, yellow, green, orange, purple);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header img {
+        margin-bottom: 1rem;
+    }
+
+    .multicolor-background {
+        height: auto;
+        padding: 1rem;
+    }
+}
+.highlight {
+    background: linear-gradient(50deg, red, yellow, green, orange, purple);
+    padding: 2px 5px;
 }
 @keyframes flash {
     0%, 100% {
@@ -61,7 +143,7 @@ nav a:hover {
     }
 }
 
-.flash-number {
+.flash-content {
     animation: flash 1s infinite;
     color: white;
     font-weight: bold;
