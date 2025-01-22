@@ -112,7 +112,13 @@ nav a:hover {
 
 .multicolor-background {
     height: 40vh;
-    background: linear-gradient(45deg, red, yellow, green, orange, purple);
+    background: linear-gradient(45deg, 
+    #e67373,  /* Slightly darker red */
+    #e6e600,  /* Slightly darker yellow */
+    #66cc66,  /* Slightly darker green */
+    #e69966,  /* Slightly darker orange */
+    #9966cc   /* Slightly darker purple */
+);
     color: white;
 }
 
@@ -146,7 +152,7 @@ nav a:hover {
 
 .flash-content {
     animation: flash 1s infinite;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 1.2em;
 }
